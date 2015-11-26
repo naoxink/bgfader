@@ -41,3 +41,8 @@ Name|type|Optional|Default
 speed|`integer`|Yes|3000
 timeout|`integer`|Yes|3000
 opacity|`float`|Yes|0.5
+
+
+## TODO list
+- [ ] It explodes with big images (>8Mb~) -> Fade fails first time
+- [ ] Images not showing in certain containers
