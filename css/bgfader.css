@@ -1,0 +1,30 @@
+.bgfader{
+	position: absolute;
+	z-index: -2;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+	display: none;
+}
+.bgfader-overlay{
+	z-index: -1;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.bgfader > .image{
+	display: none;
+}
+
+.bgfader, .bgfader > .image{
+	width: 100%;
+	height: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	-webkit-background-size: cover;
+	background-size: cover;
+}
