@@ -68,7 +68,8 @@ function bgfader(images, _options){
 
 		$overlay.css('background', 'rgba(0, 0, 0, ' + options.opacity + ')')
 		$container.append($imageSet).append($overlay)
-		$imageSet.fadeIn(options.speed, $overlay.fadeIn)
+		// $imageSet.fadeIn(options.speed, $overlay.fadeIn) // Throws an error
+		$imageSet.show()
 
 		$.each(images, function(index, url) {
 			var $imageTag = _createImageTag(url)
