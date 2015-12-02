@@ -2,7 +2,7 @@
 Set your favourite photos in the background of a div
 
 # Demo
-Coming soon :)
+http://naoxink.hol.es/bgfader
 
 # Usage
 Set the CSS and the JS
