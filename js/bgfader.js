@@ -164,9 +164,10 @@ function bgfader(images, _options){
 
 	var destroy = function() {
 		stop()
+		$overlay.remove()
 		$imageSet.remove()
 		$container.css(originalContainerStyle)
-		return true
+		return null
 	}
 
 	_set()
