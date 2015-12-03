@@ -10,6 +10,7 @@ function bgfader(images, _options){
 	var inTransition = false
 
 	var $container = $(this)
+	var originalContainerStyle = {  }
 	var $imageSet = $('<div>', {
 		'id': 'bgfader_imageset_' + $('.bgfader').length,
 		'class': 'bgfader'
@@ -61,6 +62,10 @@ function bgfader(images, _options){
 	}
 
 	var _set = function(){
+		originalContainerStyle = {
+			'position': $container.css('position'),
+			'z-index': $container.css('z-index')
+		}
 		$container.css({
 			'position': 'relative',
 			'z-index': 0
@@ -68,7 +73,6 @@ function bgfader(images, _options){
 
 		$overlay.css('background', 'rgba(0, 0, 0, ' + options.opacity + ')')
 		$container.append($imageSet).append($overlay)
-		// $imageSet.fadeIn(options.speed, $overlay.fadeIn) // Throws an error
 		$imageSet.show()
 
 		$.each(images, function(index, url) {
@@ -158,12 +162,20 @@ function bgfader(images, _options){
 		return this
 	}
 
+	var destroy = function() {
+		stop()
+		$imageSet.remove()
+		$container.css(originalContainerStyle)
+		return true
+	}
+
 	_set()
 	return {
 		'next': next,
 		'prev': prev,
 		'start': start,
-		'stop': stop
+		'stop': stop,
+		'destroy': destroy
 	}
 }
 
